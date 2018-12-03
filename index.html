@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SRS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+</head>
+<body>
+
+    <svg style="display: none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <symbol id="arrow-down-icon" viewBox="0 0 306 306">
+            <path fill="#FFF" d="M270 59L153 176 36 59 0 94l153 153L306 94z" />
+        </symbol>
+        <symbol id="icon-1" fill="none">
+            <rect width="188" height="198" rx="8" fill="#E2E2E2" />
+            <path d="M110.386 48.85l2.592-2.59a1.83 1.83 0 0 1 0-2.589l7.841-7.836a18.594 18.594 0 0 0-2.522-.172 18.405 18.405 0 0 0-13.095 5.418 18.44 18.44 0 0 0-5.252 15.607l7.844-7.838a1.835 1.835 0 0 1 2.592 0z"
+                fill="#98D9D5" />
+            <path d="M110.386 48.85a1.83 1.83 0 0 1 0 2.59l-7.842 7.836c.834.113 1.676.172 2.523.172 4.947 0 9.597-1.924 13.094-5.419a18.438 18.438 0 0 0 5.253-15.607l-7.845 7.839a1.827 1.827 0 0 1-1.296.536c-.468 0-.938-.179-1.295-.536l-2.592 2.59z"
+                fill="#6DA8D6" />
+            <path d="M118.532 73.299a22.726 22.726 0 0 0-8.733-1.745 22.979 22.979 0 0 0-14.479 5.16 1.954 1.954 0 0 1-.252.172l-.02.011a1.815 1.815 0 0 1-.256.116l-.042.015a1.794 1.794 0 0 1-.262.068l-.049.007c-.09.014-.18.023-.274.023-.1 0-.191-.009-.28-.023l-.049-.007a1.796 1.796 0 0 1-.561-.199l-.02-.011a1.82 1.82 0 0 1-.245-.167 22.993 22.993 0 0 0-14.485-5.165c-3 0-5.938.587-8.734 1.745-11.308 4.68-16.91 17.348-12.755 28.84 1.203 3.326 11.786 24.044 17.214 34.534a11.872 11.872 0 0 0 10.582 6.42c1.564 0 3.097-.306 4.557-.91 1.31-.542 2.497-1.3 3.529-2.253a1.83 1.83 0 0 1 1.244-.486c.446 0 .892.162 1.243.486a11.884 11.884 0 0 0 3.53 2.253c1.459.604 2.992.91 4.556.91 4.475 0 8.531-2.461 10.584-6.423 5.427-10.488 16.009-31.205 17.212-34.53 4.156-11.493-1.446-24.161-12.755-28.841zM65.848 90.963l-.03.002a1.832 1.832 0 0 1-1.834-1.831l.002-.031a1.83 1.83 0 0 1 1.83-1.8c.047 0 .092.003.138.006a1.83 1.83 0 0 1 1.689 1.688c.003.046.007.09.007.137a1.83 1.83 0 0 1-1.801 1.83zm9.132-9.154v.015a1.831 1.831 0 0 1-1.832 1.816 1.831 1.831 0 0 1-.014-3.662h.014c1.012 0 1.832.82 1.832 1.831zm35.309 44.071a1.832 1.832 0 0 1-1.833-1.831 1.832 1.832 0 0 1 1.833-1.831c.026 0 .052.003.079.004a1.83 1.83 0 0 1-.079 3.658z"
+                fill="#F2484B" />
+            <path d="M119.935 69.915a26.378 26.378 0 0 0-10.136-2.023c-4.939 0-9.79 1.396-13.971 3.977-.777-7.957-4.254-15.337-9.986-21.064a1.833 1.833 0 0 0-2.592 0 1.83 1.83 0 0 0 0 2.59c4.984 4.98 8.06 11.356 8.866 18.246a26.652 26.652 0 0 0-13.591-3.75c-3.483 0-6.893.681-10.137 2.024-13.121 5.43-19.622 20.132-14.799 33.468 1.584 4.38 16.76 33.725 17.406 34.973a15.527 15.527 0 0 0 13.837 8.4c2.048 0 4.053-.4 5.959-1.189a15.618 15.618 0 0 0 3.37-1.913 15.622 15.622 0 0 0 3.37 1.913 15.507 15.507 0 0 0 5.96 1.189c5.85 0 11.153-3.22 13.839-8.403.645-1.247 15.82-30.589 17.404-34.969 4.824-13.337-1.677-28.038-14.799-33.47zm11.352 32.225c-1.203 3.325-11.785 24.042-17.212 34.53a11.874 11.874 0 0 1-10.584 6.424c-1.564 0-3.097-.307-4.556-.911a11.885 11.885 0 0 1-3.53-2.253 1.83 1.83 0 0 0-1.243-.486 1.83 1.83 0 0 0-1.244.486 11.87 11.87 0 0 1-3.53 2.253c-1.459.604-2.992.91-4.556.91-4.474 0-8.53-2.46-10.582-6.42-5.428-10.49-16.01-31.208-17.214-34.534-4.156-11.492 1.447-24.16 12.755-28.84a22.73 22.73 0 0 1 8.733-1.745 22.981 22.981 0 0 1 14.48 5.16c.083.067.165.123.251.172l.02.011c.082.046.168.084.257.116l.041.015c.085.03.173.052.263.068l.048.007c.09.014.18.023.274.023.1 0 .192-.009.281-.023l.049-.007a1.813 1.813 0 0 0 .56-.199l.02-.011c.086-.05.168-.105.245-.167a22.992 22.992 0 0 1 14.486-5.165c2.999 0 5.937.587 8.733 1.744 11.309 4.68 16.911 17.35 12.755 28.842z"
+                fill="#082947" />
+            <path d="M67.643 88.997a1.83 1.83 0 0 0-1.977-1.687 1.83 1.83 0 0 0-1.68 1.793l-.001.03c0 1.012.82 1.832 1.832 1.832l.032-.002a1.83 1.83 0 0 0 1.801-1.83c0-.045-.004-.09-.007-.136zM73.148 79.978h-.015a1.832 1.832 0 0 0-1.807 2.029 1.83 1.83 0 0 0 2.018 1.622 1.831 1.831 0 0 0 1.635-1.806l.001-.014c0-1.012-.82-1.831-1.832-1.831zM110.367 122.222c-.026-.001-.052-.004-.078-.004a1.83 1.83 0 0 0-1.722 1.21 1.823 1.823 0 0 0 .03 1.326 1.835 1.835 0 0 0 1.692 1.126 1.83 1.83 0 1 0 .078-3.658zM97.146 60.862l.005.02.011.028a1.857 1.857 0 0 0 .155.34l.03.05c.027.044.056.086.088.127.01.014.02.03.031.043a1.778 1.778 0 0 0 .29.29l.044.032c.04.03.082.06.125.087l.053.03a1.818 1.818 0 0 0 .338.154l.03.012.019.005.025.008a22.265 22.265 0 0 0 6.677 1.023 22.046 22.046 0 0 0 15.686-6.492c5.87-5.865 7.964-14.425 5.472-22.347l-.007-.023-.006-.02-.011-.028a1.738 1.738 0 0 0-.059-.155l-.024-.052a1.819 1.819 0 0 0-.072-.134c-.01-.017-.019-.034-.03-.05a1.825 1.825 0 0 0-.088-.128l-.031-.041a1.767 1.767 0 0 0-.29-.29c-.014-.012-.028-.021-.042-.032a2.019 2.019 0 0 0-.179-.118 1.702 1.702 0 0 0-.132-.07l-.053-.025a1.754 1.754 0 0 0-.153-.059l-.03-.011a.299.299 0 0 0-.02-.006l-.024-.007A22.262 22.262 0 0 0 118.297 32a22.045 22.045 0 0 0-15.686 6.491c-5.87 5.866-7.965 14.425-5.472 22.347l.007.024zm8.057-19.781a18.403 18.403 0 0 1 13.094-5.419c.847 0 1.689.06 2.522.173l-7.841 7.836a1.83 1.83 0 0 0 1.295 3.126c.47 0 .939-.18 1.296-.536l7.845-7.84a18.438 18.438 0 0 1-5.253 15.608 18.402 18.402 0 0 1-13.094 5.419c-.847 0-1.689-.06-2.523-.173l7.842-7.835a1.83 1.83 0 0 0 0-2.59 1.833 1.833 0 0 0-2.591 0l-7.845 7.838a18.438 18.438 0 0 1 5.253-15.607z"
+                fill="#082947" />
+        </symbol>
+        <symbol id="icon-2" fill="none">
+            <rect width="188" height="198" rx="8" fill="#E2E2E2" />
+            <path d="M135.929 129.098h-83.08v9.766h83.08v-9.766z" fill="#F2EBD9" />
+            <path d="M52.85 91.985v16.969c0 1.01.822 1.832 1.832 1.832h79.414a1.835 1.835 0 0 0 1.833-1.832V91.985h-83.08zm67.393 13.673a1.832 1.832 0 0 1-1.833-1.831 1.832 1.832 0 0 1 3.665 0c0 1.011-.82 1.831-1.832 1.831zm7.33-4.883a1.832 1.832 0 1 1 0-3.663 1.832 1.832 0 0 1 0 3.663z"
+                fill="#6DA8D6" />
+            <path d="M142.648 63.663H46.13c-3.013 0-5.465 2.471-5.465 5.51 0 3.02 2.452 5.477 5.465 5.477 1.012 0 1.833.82 1.833 1.83v11.843h92.853v-10.01H75.452a1.832 1.832 0 1 1 0-3.663h67.196c3.014 0 5.465-2.457 5.465-5.478 0-3.038-2.451-5.51-5.465-5.51zm-74.526 14.65H53.46a1.832 1.832 0 1 1 0-3.663h14.66a1.832 1.832 0 1 1 0 3.662z"
+                fill="#FFCC75" />
+            <path d="M142.648 60H46.13C41.096 60 37 64.115 37 69.172c0 4.412 3.138 8.103 7.297 8.955v12.027c0 1.011.821 1.831 1.833 1.831h3.054v16.969a5.502 5.502 0 0 0 5.498 5.494h79.414a5.502 5.502 0 0 0 5.498-5.494V91.985h3.054c1.012 0 1.833-.82 1.833-1.831V78.127c4.159-.852 7.297-4.543 7.297-8.955 0-5.057-4.095-9.172-9.13-9.172zm0 14.65H75.452a1.832 1.832 0 1 0 0 3.662h65.364v10.01H47.963V76.482c0-1.011-.82-1.831-1.833-1.831-3.013 0-5.465-2.457-5.465-5.478 0-3.038 2.452-5.51 5.465-5.51h96.518c3.014 0 5.465 2.472 5.465 5.51 0 3.02-2.451 5.478-5.465 5.478zm-8.552 36.136H54.682a1.834 1.834 0 0 1-1.832-1.832V91.985h83.079v16.969c0 1.01-.823 1.832-1.833 1.832z"
+                fill="#082947" />
+            <path d="M68.122 74.65H53.46a1.832 1.832 0 1 0 0 3.662h14.66a1.832 1.832 0 1 0 0-3.662zM137.761 125.435H51.017c-1.012 0-1.833.82-1.833 1.832v13.428c0 1.012.821 1.832 1.833 1.832h86.744c1.012 0 1.833-.82 1.833-1.832v-13.428a1.833 1.833 0 0 0-1.833-1.832zm-1.832 13.429h-83.08v-9.766h83.08v9.766zM120.243 105.658a1.832 1.832 0 1 0 .001-3.663 1.832 1.832 0 0 0-.001 3.663zM127.573 100.775a1.832 1.832 0 1 0 .001-3.665 1.832 1.832 0 0 0-.001 3.665z"
+                fill="#082947" />
+        </symbol>
+        <symbol id="icon-3" fill="none">
+            <rect width="188" height="198" rx="8" fill="#E2E2E2" />
+            <path d="M69.23 117.35a58.15 58.15 0 0 0 2.8-16.14h-30.3a53.5 53.5 0 0 0 15.68 36.15l.37.36a60.22 60.22 0 0 0 8.85-13.76c.43-.9 1.5-1.3 2.41-.9a60.3 60.3 0 0 0 1.34-3.41 1.83 1.83 0 0 1-1.15-2.3zM72.03 97.55a59.05 59.05 0 0 0-14.25-36.51l-.37.36a53.5 53.5 0 0 0-15.68 36.15h30.3zm-14.6-22.78a1.83 1.83 0 1 1 0 3.66 1.83 1.83 0 0 1 0-3.66zM121.78 75.68a1.83 1.83 0 0 1-.9-2.43 63.91 63.91 0 0 1 9.49-14.7A53.33 53.33 0 0 0 97.25 45.7v51.85h17.9a61.8 61.8 0 0 1 2.97-17.27 1.83 1.83 0 0 1 2.31-1.18h.03c.41-1.15.86-2.28 1.34-3.4l-.02-.02zM115.14 101.2H97.25v51.86a53.31 53.31 0 0 0 33.12-12.86 62.7 62.7 0 0 1-15.23-39zm-6.8 31.44a1.94 1.94 0 0 1-.73-.07 1.84 1.84 0 0 1-1.2-2.3 1.83 1.83 0 1 1 1.93 2.37zm7.14 7.34a1.83 1.83 0 1 1 .01-3.66 1.83 1.83 0 0 1 0 3.66z"
+                fill="#F2484B" />
+            <path d="M60.48 140.2a53.35 53.35 0 0 0 33.1 12.86V101.2H75.7a61.8 61.8 0 0 1-2.98 17.27 1.83 1.83 0 0 1-2.3 1.18l-.04-.01a60.6 60.6 0 0 1-1.34 3.41l.03.01c.92.43 1.31 1.52.89 2.43a63.89 63.89 0 0 1-9.48 14.7zM75.7 97.55H93.6V45.7a53.33 53.33 0 0 0-33.11 12.86A62.7 62.7 0 0 1 75.7 97.55zM118.8 101.2a59.05 59.05 0 0 0 14.27 36.52l.36-.36a53.5 53.5 0 0 0 15.69-36.15H118.8zM133.07 61.04a60.2 60.2 0 0 0-8.86 13.75 1.83 1.83 0 0 1-2.41.9 60.75 60.75 0 0 0-1.34 3.42 1.83 1.83 0 0 1 1.15 2.3 58.15 58.15 0 0 0-2.8 16.14h30.3a53.49 53.49 0 0 0-15.68-36.15l-.36-.36z"
+                fill="#FF6E1D" />
+            <path d="M152.84 99.4v-.02-.02a56.98 56.98 0 0 0-16.81-40.55A57.07 57.07 0 0 0 95.43 42a57.04 57.04 0 0 0-38.75 15.03l-.01.01-.03.02A56.98 56.98 0 0 0 38 99.36a56.99 56.99 0 0 0 16.82 40.59 57.08 57.08 0 0 0 40.6 16.8 57.03 57.03 0 0 0 38.74-15.02l.02-.02.03-.03a56.98 56.98 0 0 0 18.64-42.29zm-19.77 38.32a59.05 59.05 0 0 1-14.26-36.51h30.3a53.5 53.5 0 0 1-15.68 36.15l-.36.36zm-64-14.65h-.03a1.83 1.83 0 0 0-2.4.9 60.23 60.23 0 0 1-8.86 13.75l-.37-.36a53.5 53.5 0 0 1-15.68-36.15h30.3a58.14 58.14 0 0 1-2.8 16.14c-.3.95.2 1.97 1.15 2.3h.03a1.83 1.83 0 0 0 2.3-1.17 61.8 61.8 0 0 0 3-17.27h17.88v51.85a53.35 53.35 0 0 1-33.11-12.86 63.9 63.9 0 0 0 9.48-14.7c.42-.91.03-2-.9-2.43zm-11.3-62.03a59.05 59.05 0 0 1 14.26 36.5h-30.3A53.5 53.5 0 0 1 57.4 61.4l.37-.36zm35.82 36.5H75.7a62.7 62.7 0 0 0-15.22-38.98 53.33 53.33 0 0 1 33.1-12.86v51.85zm3.66 3.67h17.9a62.7 62.7 0 0 0 15.22 38.99 53.32 53.32 0 0 1-33.12 12.86V101.2zm21.56-3.66a58.14 58.14 0 0 1 2.8-16.15c.31-.95-.2-1.97-1.15-2.3h-.03c-.96-.31-2 .21-2.3 1.18a61.8 61.8 0 0 0-2.99 17.27H97.25V45.7a53.33 53.33 0 0 1 33.12 12.86 63.9 63.9 0 0 0-9.48 14.7c-.43.9-.03 2 .89 2.42l.02.01a1.82 1.82 0 0 0 2.41-.9 60.2 60.2 0 0 1 8.86-13.75l.36.36a53.49 53.49 0 0 1 15.69 36.15H118.8z"
+                fill="#082947" />
+            <path d="M57.43 74.77a1.83 1.83 0 1 0 0 3.67 1.83 1.83 0 0 0 0-3.67zM108.15 128.99a1.83 1.83 0 1 0 0 3.67 1.83 1.83 0 0 0 0-3.67zM117.32 138.15a1.83 1.83 0 1 0-3.67 0 1.83 1.83 0 0 0 3.67 0z"
+                fill="#082947" />
+        </symbol>
+        <symbol id="icon-4" fill="none">
+            <rect width="188" height="198" rx="8" fill="#E2E2E2" />
+            <path d="M104.82 75.86a11.57 11.57 0 0 1-8.55-1.1v65.52a1.83 1.83 0 0 1-3.67 0V74.76a11.36 11.36 0 0 1-8.55 1.1v79.07h8.55v-7.33a1.83 1.83 0 0 1 3.67 0v7.33h8.55V75.86z"
+                fill="#FFCC75" />
+            <path d="M92.1 54.2h4.68l-2.35-5.6-2.34 5.6z" fill="#274B6D" />
+            <path d="M101.9 72.57c.82 0 1.62-.13 2.38-.37L98.3 57.87h-7.73L84.59 72.2c.76.24 1.56.37 2.38.37 2.45 0 4.68-1.1 5.96-2.93a1.83 1.83 0 0 1 3 0 7.22 7.22 0 0 0 5.97 2.93z"
+                fill="#F2EBD9" />
+            <path d="M94.43 145.77c-1 0-1.83.82-1.83 1.83v7.33a1.83 1.83 0 0 0 3.67 0v-7.33c0-1.01-.82-1.83-1.84-1.83z"
+                fill="#082947" />
+            <path d="M133.3 84.83l11.89-11.88a24.71 24.71 0 0 0-22.1 6.87 24.76 24.76 0 0 0-6.87 22.08L128.12 90a1.83 1.83 0 0 1 2.59 0l2.59-2.59a1.83 1.83 0 0 1 0-2.59z"
+                fill="#98D9D5" />
+            <path d="M134.6 87.96c-.47 0-.94-.18-1.3-.54l-2.6 2.6c.72.7.72 1.87 0 2.58l-11.88 11.88a24.71 24.71 0 0 0 22.1-6.87 24.76 24.76 0 0 0 6.86-22.07L135.9 87.42c-.36.36-.83.54-1.3.54z"
+                fill="#6DA8D6" />
+            <path d="M150.54 71.45l-.01-.03v-.01l-.02-.03a1.81 1.81 0 0 0-.27-.52l-.03-.04a1.77 1.77 0 0 0-.3-.3l-.03-.02a1.88 1.88 0 0 0-.13-.1l-.05-.02a1.9 1.9 0 0 0-.14-.07l-.05-.03-.16-.06h-.02l-.02-.01-.03-.01a28.63 28.63 0 0 0-28.78 7.03 28.42 28.42 0 0 0-7.33 27.72l-4.69 4.68v-36.5-.01-.07a1.85 1.85 0 0 0-.14-.62l-7.12-17.1-.01-.01-5.08-12.2a1.83 1.83 0 0 0-3.39 0l-5.08 12.2v.02l-7.14 17.09c-.08.2-.12.4-.13.62v58.55l-4.69-4.67a28.42 28.42 0 0 0-7.34-27.73 28.63 28.63 0 0 0-28.78-7.03l-.02.01h-.02l-.03.02-.16.06-.04.02-.14.07-.05.03-.13.1-.04.02a1.87 1.87 0 0 0-.29.3l-.03.03-.09.13-.03.05a1.89 1.89 0 0 0-.15.34l-.01.03-.01.02v.03a28.43 28.43 0 0 0 7.03 28.75 28.63 28.63 0 0 0 27.74 7.33l7.27 7.27v18.15a1.83 1.83 0 0 0 3.67 0V75.85a11.57 11.57 0 0 0 8.55-1.1v65.53a1.83 1.83 0 0 0 3.67 0V74.75a11.36 11.36 0 0 0 8.55 1.1v79.07a1.83 1.83 0 0 0 3.66 0v-40.11l7.28-7.27c2.46.67 5 1.02 7.56 1.02 7.63 0 14.8-2.97 20.18-8.35a28.43 28.43 0 0 0 7.04-28.76zM47.96 119.59a24.76 24.76 0 0 1-6.87-22.07l28.96 28.94c-1.48.27-2.99.4-4.5.4a24.72 24.72 0 0 1-17.59-7.27zm17.81-17.8a24.76 24.76 0 0 1 6.87 22.08L43.68 94.93a24.72 24.72 0 0 1 22.09 6.87zm30.16-32.15a1.83 1.83 0 0 0-3 0 7.22 7.22 0 0 1-5.96 2.93c-.82 0-1.62-.13-2.38-.37l5.98-14.33h7.73l5.98 14.33c-.76.24-1.56.37-2.38.37a7.22 7.22 0 0 1-5.97-2.93zM92.1 54.2l2.34-5.62 2.35 5.62h-4.69zm48.82 43.4a24.71 24.71 0 0 1-22.1 6.87l11.9-11.88a1.83 1.83 0 1 0-2.6-2.59l-11.89 11.89a24.76 24.76 0 0 1 6.88-22.08 24.71 24.71 0 0 1 22.09-6.87l-11.9 11.88a1.83 1.83 0 1 0 2.6 2.6l11.9-11.89c1.47 8-1.03 16.23-6.88 22.08z"
+                fill="#082947" />
+            <path d="M72.64 123.87c1.48-8-1.02-16.23-6.87-22.08a24.72 24.72 0 0 0-22.09-6.86l28.96 28.94z" fill="#98D9D5" />
+            <path d="M41.09 97.52a24.76 24.76 0 0 0 6.87 22.07 24.72 24.72 0 0 0 22.09 6.87L41.09 97.52z" fill="#6DA8D6" />
+        </symbol>
+        <symbol id="icon-5" fill="none">
+            <rect width="188" height="198" rx="8" fill="#E2E2E2" />
+            <path d="M131.07 125.09h-14.66v6.1h14.66v-6.1z" fill="#fff" />
+            <path d="M46.92 62.33h95l3.67-3.67H43.26l3.66 3.67zM112.75 131.2v-3.67H46.92l-3.66 3.66h69.49zM141.92 127.53h-7.18v3.66h10.85l-3.67-3.66z"
+                fill="#F2EBD9" />
+            <path d="M44.33 124.94V64.92l-3.66-3.67v67.35l3.66-3.66zM144.51 64.92v60.02l3.67 3.66V61.25l-3.67 3.67zM138.4 134.85H50.45v3.67h87.97v-3.67z"
+                fill="#FFCC75" />
+            <path d="M112.75 123.26c0-1.02.82-1.84 1.83-1.84h18.33c1.01 0 1.83.82 1.83 1.84v.6h6.1V66H48v57.88h64.75v-.61zm-31.91-19.34a1.83 1.83 0 1 1-3.05 2.04l-5.2-7.75-5.2 7.75a1.83 1.83 0 0 1-3.04-2.04l6.04-9-6.04-8.98a1.83 1.83 0 1 1 3.04-2.04l5.2 7.74 5.2-7.74a1.83 1.83 0 0 1 3.05 2.04l-6.04 8.99 6.04 8.99zm20.91-7.32h-5.5v5.5a1.83 1.83 0 0 1-3.66 0v-5.5h-5.5a1.83 1.83 0 1 1 0-3.66h5.5v-5.5a1.83 1.83 0 0 1 3.66 0v5.5h5.5a1.83 1.83 0 1 1 0 3.66zm6.76-13.2a1.83 1.83 0 0 1 2.54.5l5.24 7.8 5.16-7.8a1.83 1.83 0 0 1 3.05 2.02l-6.36 9.64v9.38a1.83 1.83 0 1 1-3.67 0v-9.38l-6.46-9.62a1.83 1.83 0 0 1 .5-2.54z"
+                fill="#6DA8D6" />
+            <path d="M80.34 83.4a1.83 1.83 0 0 0-2.55.5l-5.2 7.74-5.2-7.74a1.83 1.83 0 0 0-3.04 2.04l6.04 8.99-6.04 8.99a1.83 1.83 0 1 0 3.04 2.04l5.2-7.75 5.2 7.75a1.83 1.83 0 0 0 3.05-2.04l-6.04-9 6.04-8.98c.56-.84.34-1.98-.5-2.54zM114.47 95.56v9.38a1.83 1.83 0 1 0 3.67 0v-9.38l6.36-9.63a1.83 1.83 0 1 0-3.05-2.02l-5.16 7.8-5.24-7.81a1.83 1.83 0 0 0-3.04 2.04l6.46 9.62zM101.75 92.94h-5.5v-5.5a1.83 1.83 0 0 0-3.66 0v5.5h-5.5a1.83 1.83 0 1 0 0 3.66h5.5v5.5a1.83 1.83 0 0 0 3.66 0v-5.5h5.5a1.83 1.83 0 1 0 0-3.66z"
+                fill="#fff" />
+            <path d="M151.48 134.11l.06-.07.05-.08.04-.08.04-.08.04-.08c0-.03.02-.05.03-.08l.02-.09.03-.08.02-.09.01-.1.02-.08V56.83v-.18l-.02-.07-.01-.1-.02-.1-.03-.08-.02-.08-.03-.09-.04-.08a1.47 1.47 0 0 0-.04-.08l-.04-.07-.06-.09-.05-.07-.05-.07a2.13 2.13 0 0 0-.26-.26l-.06-.04-.08-.06-.08-.05-.07-.04-.09-.04-.08-.04-.08-.03-.09-.03-.08-.02-.09-.02-.1-.02-.08-.01-.18-.01H38.65l-.08.02c-.03 0-.06 0-.1.02l-.08.02-.09.02-.09.03-.08.03-.08.04-.08.04-.07.04-.08.05-.08.06-.07.05a1.83 1.83 0 0 0-.25.25l-.06.07-.05.07-.05.09-.04.07-.04.08-.04.08-.03.09-.03.08-.02.09-.02.08-.02.1-.01.08-.01.18v76.37l.02.08c0 .03 0 .07.02.1 0 .03 0 .06.02.09l.02.09.03.08c0 .03.02.06.03.08l.04.08c0 .03.02.06.04.09l.04.07.05.08.05.07.06.07a1.93 1.93 0 0 0 .25.26l.07.05.08.05.07.05.08.05.08.04c.03 0 .05.02.08.03l.08.03.1.03.07.03.1.02.1.01.07.01.18.01h7.94v5.5c0 1 .82 1.83 1.84 1.83h91.63c1.01 0 1.83-.82 1.83-1.83v-5.5H150.19l.08-.02.1-.01.1-.02.07-.03.1-.03.07-.03c.03 0 .06-.02.08-.03a.88.88 0 0 0 .16-.09l.08-.05.08-.05.06-.05a1.95 1.95 0 0 0 .26-.26l.05-.07zm-101.04 4.4v-3.66h87.97v3.67H50.44zm84.3-7.32v-3.66h7.18l3.67 3.66h-10.85zm-18.33 0v-6.1h14.66v6.1h-14.66zM48 123.87V65.99h92.85v57.88h-6.11v-.61c0-1.02-.82-1.84-1.83-1.84h-18.33c-1.01 0-1.83.82-1.83 1.84v.6H48zm93.92-61.54h-95l-3.66-3.67h102.33l-3.67 3.67zM44.33 64.9v60.03l-3.66 3.66V61.25l3.66 3.66zm100.18 60.03V64.9l3.67-3.66v67.35l-3.67-3.66zm-97.59 2.59h65.83v3.66h-69.5l3.67-3.66z"
+                fill="#082947" />
+        </symbol>
+        <symbol id="icon-6" fill="none">
+            <rect width="626" height="660" rx="8" fill="#E2E2E2" />
+            <path d="M230.53 391.17a194.03 194.03 0 0 0 9.33-53.8H138.94a178.42 178.42 0 0 0 52.22 120.5l1.23 1.2a200.8 200.8 0 0 0 29.49-45.86 6.1 6.1 0 0 1 8.02-3c1.6-3.74 3.08-7.54 4.46-11.39a6.1 6.1 0 0 1-3.83-7.65zM239.86 325.15c-1.4-44.48-18.1-87.26-47.47-121.7l-1.23 1.2a178.4 178.4 0 0 0-52.22 120.5h100.92zm-48.65-75.9a6.09 6.09 0 0 1 6.11 6.1 6.1 6.1 0 1 1-6.1-6.1zM405.49 252.28a6.1 6.1 0 0 1-2.97-8.1 213.03 213.03 0 0 1 31.57-49 177.48 177.48 0 0 0-110.26-42.86v172.83h59.56a206.2 206.2 0 0 1 9.94-57.56 6.1 6.1 0 0 1 7.68-3.93l.1.03c1.37-3.84 2.86-7.64 4.46-11.38l-.08-.03zM383.4 337.36h-59.57V510.2a177.43 177.43 0 0 0 110.26-42.87c-31.45-36.7-49.28-82.41-50.7-129.96zm-22.65 104.78a5.85 5.85 0 0 1-2.44-.24 6.12 6.12 0 0 1-4.01-7.65 6.1 6.1 0 1 1 6.45 7.89zm23.78 24.45a6.07 6.07 0 0 1-5.55-3.58 6.07 6.07 0 0 1-.22-4.48 6.1 6.1 0 1 1 5.77 8.06z"
+                fill="#F2484B" />
+            <path d="M201.38 467.33a177.5 177.5 0 0 0 110.25 42.86V337.36h-59.56c-.57 19.6-3.9 38.95-9.93 57.57a6.1 6.1 0 0 1-7.69 3.93l-.09-.04a201.65 201.65 0 0 1-4.46 11.39c.03 0 .05.02.08.03a6.1 6.1 0 0 1 2.97 8.1 212.98 212.98 0 0 1-31.57 48.99zM252.07 325.15h59.56V152.32a177.48 177.48 0 0 0-110.25 42.87c31.45 36.7 49.28 82.42 50.7 129.96zM395.6 337.36c1.41 44.48 18.1 87.26 47.48 121.7l1.22-1.2a178.42 178.42 0 0 0 52.23-120.5H395.61zM443.08 203.45a200.74 200.74 0 0 0-29.49 45.86 6.1 6.1 0 0 1-8.02 3c-1.6 3.74-3.09 7.54-4.46 11.38a6.1 6.1 0 0 1 3.83 7.66 194.03 194.03 0 0 0-9.34 53.8h100.93a178.4 178.4 0 0 0-52.22-120.5l-1.23-1.2z"
+                fill="#FF6E1D" />
+            <path d="M508.94 331.33v-.07-.07a190.03 190.03 0 0 0-56-135.17A189.93 189.93 0 0 0 317.74 140c-48.23 0-93.7 17.74-129 50.1l-.06.04-.07.07a190.03 190.03 0 0 0-62.08 141.02c.01 51.13 19.9 99.15 56 135.27a189.94 189.94 0 0 0 135.2 56.01c48.2 0 93.67-17.72 128.99-50.07l.06-.06.1-.1a190.05 190.05 0 0 0 62.06-140.95zm-65.86 127.73c-29.38-34.44-46.07-77.22-47.47-121.7h100.92a178.42 178.42 0 0 1-52.23 120.5c-.4.41-.81.8-1.22 1.2zm-213.1-48.82l-.08-.03a6.1 6.1 0 0 0-8.02 3 200.84 200.84 0 0 1-29.49 45.85l-1.23-1.2a178.4 178.4 0 0 1-52.22-120.5h100.93c-.58 18.33-3.7 36.4-9.34 53.8a6.1 6.1 0 0 0 3.83 7.66l.1.04a6.12 6.12 0 0 0 7.68-3.93 206.18 206.18 0 0 0 9.93-57.57h59.56V510.2a177.5 177.5 0 0 1-110.25-42.86 213 213 0 0 0 31.57-48.98 6.1 6.1 0 0 0-2.97-8.11zm-37.6-206.78c29.39 34.43 46.08 77.21 47.48 121.7H138.93a178.4 178.4 0 0 1 52.23-120.5c.4-.41.82-.8 1.23-1.2zm119.25 121.7h-59.56c-1.4-47.55-19.24-93.27-50.7-129.97a177.48 177.48 0 0 1 110.26-42.87v172.83zm12.2 12.2h59.57c1.4 47.54 19.24 93.26 50.69 129.96a177.43 177.43 0 0 1-110.26 42.88V337.36zm71.77-12.2c.57-18.33 3.7-36.4 9.34-53.81a6.1 6.1 0 0 0-3.83-7.66c-.04 0-.06-.02-.1-.03a6.1 6.1 0 0 0-7.68 3.92 206.16 206.16 0 0 0-9.94 57.57h-59.56V152.32A177.48 177.48 0 0 1 434.1 195.2a213 213 0 0 0-31.57 48.98 6.1 6.1 0 0 0 2.97 8.1l.08.04a6.07 6.07 0 0 0 8.02-3 200.79 200.79 0 0 1 29.49-45.86l1.23 1.2a178.4 178.4 0 0 1 52.22 120.5H395.6z"
+                fill="#082947" />
+            <path d="M191.22 249.25a6.1 6.1 0 1 0 0 12.2 6.1 6.1 0 0 0 0-12.2zM360.13 429.96a6.1 6.1 0 1 0 0 12.22 6.1 6.1 0 0 0 0-12.22zM390.64 460.48a6.1 6.1 0 1 0-12.21 0 6.1 6.1 0 0 0 12.2 0z"
+                fill="#082947" />
+        </symbol>
+    </svg>
+
+    <header>
+        <nav>
+            <ul class="menu">
+                <li class="menu__item">Меню_01</li>
+                <li class="menu__item">Меню_02</li>
+
+                <li class="menu__item">Меню_03
+                    <span class="arrow-down-icon-container">
+                        <svg class="arrow-down-icon">
+                            <use xlink:href="#arrow-down-icon"></use>
+                        </svg>
+                    </span>
+                    <ul class="submenu">
+                        <li class="submenu__item">Меню_01</li>
+                        <li class="submenu__item">Меню_02</li>
+                        <li class="submenu__item">Меню_03</li>
+                    </ul>
+                </li>
+
+                <li class="menu__item">Меню_04
+                    <span class="arrow-down-icon-container">
+                        <svg class="arrow-down-icon">
+                            <use xlink:href="#arrow-down-icon"></use>
+                        </svg>
+                    </span>
+                    <ul class="submenu">
+                        <li class="submenu__item">Меню_01</li>
+                        <li class="submenu__item">Меню_02</li>
+                        <li class="submenu__item">Меню_03</li>
+                    </ul>
+                </li>
+
+                <li class="menu__item">Меню_05</li>
+
+                <li class="menu__item">Меню_06
+                    <span class="arrow-down-icon-container">
+                        <svg class="arrow-down-icon">
+                            <use xlink:href="#arrow-down-icon"></use>
+                        </svg>
+                    </span>
+                    <ul class="submenu">
+                        <li class="submenu__item">Меню_01</li>
+                        <li class="submenu__item">Меню_02</li>
+                        <li class="submenu__item">Меню_03</li>
+                    </ul>
+                </li>
+
+                <li class="menu__item">Меню_07</li>
+                <li class="menu__item">Меню_08</li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="container">
+        <h6 class="breadcrumbs">
+            <a href="" class="breadcrumbs__link">Главная страница</a> <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">страница</a> <span class="breadcrumbs__separator">/</span>
+            <a href="#" class="breadcrumbs__link">таблица</a>
+        </h6>
+
+        <article class="article">
+            <h1 class="article__heading">ЗАГОЛОВОК</h1>
+            <h2 class="article__subheading">ПОДЗАГОЛОВОК</h2>
+                <p class="article__first-paragraph article__paragraph">
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam,
+                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+                    ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+                    adipisci
+                    velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    Ut enim
+                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                    consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                    consequatur, vel
+                    illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                </p>
+            <div class="row">
+                <p class="col article__paragraph">
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam,
+                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+                    ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+                    adipisci
+                    velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    Ut enim
+                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                    consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                    consequatur, vel
+                    illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                </p>
+                <p class="col article__paragraph">
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam,
+                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+                    ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+                    adipisci
+                    velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    Ut enim
+                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                    consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                    consequatur, vel
+                    illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                </p>
+            </div>
+        </article>
+
+        <article class="article">
+            <h1 class="article__heading">ЗАГОЛОВОК</h1>
+
+            <div class="row article__paragraph-container">
+                <p class="article__paragraph col-12 col-sm-9">
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam,
+                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+                    ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+                    adipisci
+                    velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    Ut enim
+                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                    consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                    consequatur, vel
+                    illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                </p>
+                <div class="col-12 col-sm-auto article__image-container">
+                    <div class=" article__image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row article__paragraph-container">
+                <div class="col-12 col-sm-auto article__image-container">
+                    <div class="article__image">
+                    </div>
+                </div>
+                <p class="article__paragraph col-12 col-sm-9">
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam,
+                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+                    ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+                    adipisci
+                    velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    Ut enim
+                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                    consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                    consequatur, vel
+                    illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                </p>
+            </div>
+
+            <div class="row article__paragraph-container">
+                <p class="article__paragraph col-12 col-sm-9">
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam,
+                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+                    ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+                    adipisci
+                    velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    Ut enim
+                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                    consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                    consequatur, vel
+                    illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                </p>
+                <div class="col-12 col-sm-auto article__image-container">
+                    <div class="article__image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row article__paragraph-container">
+                <div class="col-12 col-sm-auto article__image-container">
+                    <div class="article__image">
+                    </div>
+                </div>
+                <p class="article__paragraph col-12 col-sm-9">
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam,
+                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+                    ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+                    adipisci
+                    velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    Ut enim
+                    ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                    consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                    consequatur, vel
+                    illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                </p>
+            </div>
+
+        </article>
+
+        <button type="button" class="col-12 col-sm-auto black-button load-more-news-btn">Загрузить еще новостей</button>
+
+        <section class="icons">
+            <div class="row icons__row">
+                <svg class="col-5 col-sm icons__small-icon"  viewBox="0 0 188 198">
+                    <use xlink:href="#icon-1"></use>
+                </svg>
+
+                <svg class="col-5 offset-2 offset-sm-0 col-sm icons__small-icon" viewBox="0 0 188 198">
+                    <use xlink:href="#icon-2"></use>
+                </svg>
+
+                <svg class="col-5 col-sm icons__small-icon" viewBox="0 0 188 198">
+                    <use xlink:href="#icon-3"></use>
+                </svg>
+
+                <svg class="col-5 offset-2 offset-sm-0 col-sm icons__small-icon" viewBox="0 0 188 198">
+                    <use xlink:href="#icon-4"></use>
+                </svg>
+
+                <svg class="col-5 col-sm icons__small-icon" viewBox="0 0 188 198">
+                    <use xlink:href="#icon-5"></use>
+                </svg>
+            </div>
+
+            <div class="row icons__row">
+                <svg class="col-12 col-sm-auto icons__big-icon" width="626" viewBox="0 0 626 660">
+                    <use xlink:href="#icon-6"></use>
+                </svg>
+            </div>
+
+            <div class="row icons__row">
+                <svg class="col-5 col-sm icons__small-icon"  viewBox="0 0 188 198">
+                    <use xlink:href="#icon-1"></use>
+                </svg>
+
+                <svg class="col-5 offset-2 offset-sm-0 col-sm icons__small-icon" viewBox="0 0 188 198">
+                    <use xlink:href="#icon-2"></use>
+                </svg>
+
+                <svg class="col-5 col-sm icons__small-icon" viewBox="0 0 188 198">
+                    <use xlink:href="#icon-3"></use>
+                </svg>
+
+                <svg class="col-5 offset-2 offset-sm-0 col-sm icons__small-icon" viewBox="0 0 188 198">
+                    <use xlink:href="#icon-4"></use>
+                </svg>
+
+                <svg class="col-5 col-sm icons__small-icon" viewBox="0 0 188 198">
+                    <use xlink:href="#icon-5"></use>
+                </svg>
+            </div>
+        </section>
+
+        <div class="doctor-image-container">
+            <img class="doctor-image" src="img/doctor.png" alt="Doctor's image">                
+        </div>
+    </main>
+
+    <hr>
+
+    <main class="container plain-text">
+        <p class="plain-text__paragraph">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+            aperiam,
+            eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+            voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+            velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
+            enim
+            ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+            consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+            vel
+            illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        </p>
+        <p class="plain-text__paragraph">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+            aperiam,
+            eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+            voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+            velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
+            enim
+            ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+            consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+            vel
+            illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        </p>
+        <p class="plain-text__paragraph">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+            aperiam,
+            eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+            voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+            velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
+            enim
+            ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+            consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+            vel
+            illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        </p>
+    </main>
+
+    <hr>
+
+    <main class='container'>
+        <div class="row rects-row">
+            <div class="col-12 col-sm-3 rect-container">
+                <div class="rect">
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-3 rect-container">
+                <div class="rect">
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-3 rect-container">
+                <div class="rect">
+                </div>
+            </div>
+        </div>
+
+        <div class="row slider">
+            <div class="col-12">
+                <div class="slider__content">
+                    <article class="content__article">
+                        <h2 class="article__subheading">ПОДЗАГОЛОВОК</h2>
+                        <p class="article__paragraph">
+                            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                            eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                            voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,<span class="article__text-to-hide"> consectetur, adipisci
+                            velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
+                            ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                            consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
+                            illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</span>
+                        </p>
+                    </article>
+                    <button class="content__button" type="button">кнопка</button>
+                </div>
+            </div>
+
+            <input type="radio" name="slider__radio" id="slider__radio-0" value="0" checked>
+            <label class="slider__label-0" for="slider__radio-0"></label>
+            <input type="radio" name="slider__radio" id="slider__radio-1" value="1">
+            <label class="slider__label-1" for="slider__radio-1"></label>
+            <input type="radio" name="slider__radio" id="slider__radio-2" value="2">
+            <label class="slider__label-2" for="slider__radio-2"></label>
+            
+            <button type="button" class="slider__previous-control"></button>
+            <button type="button" class="slider__next-control"></button>
+        </div>
+
+        <div class="row form-container">
+            <form action="" class="col-12 form">
+                <h2 class="form__heading">ЗАПОЛНИ</h2>
+
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <input class="form__input" type="text" name="name" id="" placeholder="Имя">
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <input class="form__input" type="email" name="email" id="" placeholder="Почта">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <input class="form__input" type="tel" name="telephone" id="" placeholder="Телефон">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-10 col-sm-5 form__gender-labels">
+                        <label class="form__gender-label">
+                            Мальчик
+                            <input checked class="form__radio" type="radio" name="gender">
+                            <span class="form__styled-radio"></span>
+                        </label>
+                    
+                        <label class="form__gender-label">
+                            Девочка
+                            <input class="form__radio" type="radio" name="gender">
+                            <span class="form__styled-radio"></span>
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-10 col-sm-10 form__career-labels">
+                        <label class="form__career-label">
+                            Артист
+                            <input checked class="form__checkbox" type="checkbox" name="career">
+                            <span class="form__styled-checkbox"></span>
+                        </label>
+                        <label class="form__career-label">
+                            Инженер
+                            <input class="form__checkbox" type="checkbox" name="career">
+                            <span class="form__styled-checkbox"></span>
+                        </label>
+                        <label class="form__career-label">
+                            Учитель
+                            <input class="form__checkbox" type="checkbox" name="career">
+                            <span class="form__styled-checkbox"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <textarea name="message" class="form__textarea col-12" id="" rows="7" placeholder="Сообщение"></textarea>
+                <button type="submit" class="form__submit-button black-button col-12">Отправить</button>
+            </form>
+        </div>
+
+        <section class="row news-container">
+            <div class="news-row">
+                <article class="news col-12 col-sm-3">
+                    <div class="col-12 news__illustration"></div>
+                    <h2 class="news__heading">Новость</h2>
+                    <h6 class="news__subheading">Подзаголовок</h6>
+                    <p class="news__text">
+                        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+                        aperiam,
+                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+                        ipsam
+                        volup
+                    </p>
+                </article>
+
+                <article class="news col-12 offset-sm-1 col-sm-3">
+                    <div class="col-12 news__illustration"></div>
+                    <h2 class="news__heading">Новость</h2>
+                    <h6 class="news__subheading">Подзаголовок</h6>
+                    <p class="news__text">
+                        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+                        aperiam,
+                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+                        ipsam
+                        volup
+                    </p>
+                </article>
+
+                <article class="news col-12 offset-sm-1 col-sm-3">
+                    <div class="col-12 news__illustration"></div>
+                    <h2 class="news__heading">Новость</h2>
+                    <h6 class="news__subheading">Подзаголовок</h6>
+                    <p class="news__text">
+                        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+                        aperiam,
+                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+                        ipsam
+                        volup
+                    </p>
+                </article>
+            </div>
+
+            <div class="news-row">
+                <article class="news col-12 col-sm-3">
+                    <div class="col-12 news__illustration"></div>
+                    <h2 class="news__heading">Новость</h2>
+                    <h6 class="news__subheading">Подзаголовок</h6>
+                    <p class="news__text">
+                        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                        rem
+                        aperiam,
+                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                        enim
+                        ipsam
+                        volup
+                    </p>
+                </article>
+            
+                <article class="news col-12 offset-sm-1 col-sm-3">
+                    <div class="col-12 news__illustration"></div>
+                    <h2 class="news__heading">Новость</h2>
+                    <h6 class="news__subheading">Подзаголовок</h6>
+                    <p class="news__text">
+                        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                        rem
+                        aperiam,
+                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                        enim
+                        ipsam
+                        volup
+                    </p>
+                </article>
+            
+                <article class="news col-12 offset-sm-1 col-sm-3">
+                    <div class="col-12 news__illustration"></div>
+                    <h2 class="news__heading">Новость</h2>
+                    <h6 class="news__subheading">Подзаголовок</h6>
+                    <p class="news__text">
+                        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                        rem
+                        aperiam,
+                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                        enim
+                        ipsam
+                        volup
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <button class="col-12 black-button more-news-btn">Еще новости</button>
+
+        <div class="row form-container">
+            <form action="" class="col-12 form">
+                <h2 class="form__heading">ЗАПОЛНИ</h2>
+        
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <input class="form__input" type="text" name="name" placeholder="Имя">
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <input class="form__input" type="tel" name="telephone" placeholder="Телефон">
+                    </div>
+                </div>
+        
+                <button type="submit" class="form__submit-button  black-button col-12">Отправить</button>
+            </form>
+        </div>
+        
+        
+    </main>
+
+<script src="scripts/load-news.js"></script>
+</body>
+</html>
