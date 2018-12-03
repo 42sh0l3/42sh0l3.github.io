@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (xhr.status != 200) {
                 alert('Erro occurted! Please refresh the page.');
             } else {
-                console.log(xhr.responseXML.title);
+                console.log(xhr.responseXML);
             }
         };
 
