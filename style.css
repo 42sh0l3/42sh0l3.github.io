@@ -287,7 +287,7 @@ nav,
 
 .slider .slider__content {
   padding: 73px 104px 47px 109px;
-  background-image: url("../img/slider-image.png");
+  background-color: black;
 }
 
 .slider .slider__content .article__subheading,
