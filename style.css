@@ -212,7 +212,7 @@ nav,
   background-color: #C4C4C4;
 }
 
-.article:nth-of-type(2) .article__image-container {
+.article:nth-of-type(2) .article__image-container:last-child {
   margin-left: auto;
 }
 
