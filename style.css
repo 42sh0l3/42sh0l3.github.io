@@ -543,7 +543,7 @@ nav,
   margin-top: 35px;
 }
 
-/* MEDIA QUERIES */
+/* MEDIA QUERY */
 @media (max-width: 375px) {
   .menu .menu__item {
     display: none;
