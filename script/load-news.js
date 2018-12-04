@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".load-more-news-btn").addEventListener("click", event => {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "news-1.html");
+        xhr.open("GET", "../news-1.html");
         xhr.responseType = "document";
 
         xhr.onload = () => {
