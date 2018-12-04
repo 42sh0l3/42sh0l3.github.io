@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert('Erro occurted! Please refresh the page.');
             } else {
                 console.log(xhr.responseXML);
+                console.dir(xhr.responseXML);
             }
         };
 

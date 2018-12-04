@@ -1,11 +1,14 @@
 @charset "UTF-8";
-.menu, .menu .menu__item .submenu {
+
+.menu,
+.menu .menu__item .submenu {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.slider .slider__previous-control, .slider .slider__next-control {
+.slider .slider__previous-control,
+.slider .slider__next-control {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,34 +21,44 @@
   cursor: pointer;
 }
 
-.slider .slider__previous-control, .slider .slider__next-control, .slider .slider__previous-control:active, .slider .slider__next-control:active, .slider .slider__previous-control:focus, .slider .slider__next-control:focus {
+.slider .slider__previous-control,
+.slider .slider__next-control,
+.slider .slider__previous-control:active,
+.slider .slider__next-control:active,
+.slider .slider__previous-control:focus,
+.slider .slider__next-control:focus {
   outline: none;
 }
 
-.slider .slider__previous-control:after, .slider .slider__next-control:after {
+.slider .slider__previous-control:after,
+.slider .slider__next-control:after {
   content: '';
   position: relative;
   border: 13px solid transparent;
 }
 
-.form-container .form .form__gender-labels, .form-container .form .form__career-labels {
+.form-container .form .form__gender-labels,
+.form-container .form .form__career-labels {
   display: flex;
   justify-content: space-between;
   margin-left: 17px;
 }
 
-.form-container .form .form__gender-labels label, .form-container .form .form__career-labels label {
+.form-container .form .form__gender-labels label,
+.form-container .form .form__career-labels label {
   position: relative;
 }
 
-.form-container .form .form__gender-labels label input, .form-container .form .form__career-labels label input {
+.form-container .form .form__gender-labels label input,
+.form-container .form .form__career-labels label input {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
 
-.form-container .form .form__gender-labels label span, .form-container .form .form__career-labels label span {
+.form-container .form .form__gender-labels label span,
+.form-container .form .form__career-labels label span {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -222,15 +235,14 @@ nav,
   margin: 47px auto 47px auto;
 }
 
-.icons__row .icons__small-icon,
-.icons__row .icons__big-icon {
-  height: 100%;
-}
-
 .icons__row:nth-of-type(2) {
   justify-content: center;
   margin-bottom: 40px;
   margin-top: 40px;
+}
+
+.icons__row:nth-of-type(2) .icons__big-icon {
+  width: 60%;
 }
 
 .doctor-image-container {
@@ -325,7 +337,7 @@ nav,
   display: none;
 }
 
-.slider #slider__radio-0:checked + .slider__label-0 {
+.slider #slider__radio-0:checked+.slider__label-0 {
   background-color: black;
   border: none;
 }
@@ -345,7 +357,7 @@ nav,
   display: none;
 }
 
-.slider #slider__radio-1:checked + .slider__label-1 {
+.slider #slider__radio-1:checked+.slider__label-1 {
   background-color: black;
   border: none;
 }
@@ -363,7 +375,7 @@ nav,
   display: none;
 }
 
-.slider #slider__radio-2:checked + .slider__label-2 {
+.slider #slider__radio-2:checked+.slider__label-2 {
   background-color: black;
   border: none;
 }
@@ -408,7 +420,8 @@ nav,
   border: 0;
 }
 
-.form-container .form .form__input[name='name'], .form-container .form .form__input[name='email'] {
+.form-container .form .form__input[name='name'],
+.form-container .form .form__input[name='email'] {
   margin-bottom: 17px;
 }
 
@@ -416,7 +429,7 @@ nav,
   margin-bottom: 26px;
 }
 
-.form-container .form .form__gender-labels .form__radio:checked + .form__styled-radio:after {
+.form-container .form .form__gender-labels .form__radio:checked+.form__styled-radio:after {
   content: '';
   width: 12px;
   height: 12px;
@@ -436,11 +449,11 @@ nav,
   margin: 39px 0 49px 17px;
 }
 
-.form-container .form .form__career-labels .form__checkbox:checked + .form__styled-checkbox {
+.form-container .form .form__career-labels .form__checkbox:checked+.form__styled-checkbox {
   background-color: black;
 }
 
-.form-container .form .form__career-labels .form__checkbox:checked + .form__styled-checkbox:after {
+.form-container .form .form__career-labels .form__checkbox:checked+.form__styled-checkbox:after {
   content: '';
   width: 9px;
   height: 16px;
@@ -535,164 +548,214 @@ nav,
   .menu .menu__item {
     display: none;
   }
+
   .menu:after {
     content: "МЕНЮ";
     align-self: center;
   }
+
   .container {
     padding: 0 29px;
   }
+
   .container:nth-of-type(3) {
     padding: 0 32px;
   }
+
   .breadcrumbs {
     margin-bottom: 33px;
   }
+
   .article:first-of-type {
     margin: 0;
   }
+
   .article:first-of-type .article__paragraph {
     display: none;
   }
+
   .article:first-of-type .article__paragraph.article__first-paragraph {
     display: block;
     margin: 65px 0 100px;
   }
+
   .article .article__heading {
     font-size: 46px;
   }
+
   .article .article__subheading {
     position: static;
     font-size: 28px;
   }
+
   .article:nth-of-type(2) .article__heading {
     margin-bottom: 88px;
   }
+
   .article:nth-of-type(2) .article__paragraph-container {
     margin-bottom: 25px;
   }
+
   .article:nth-of-type(2) .article__paragraph-container:last-of-type,
   .article:nth-of-type(2) .article__paragraph-container .article__paragraph {
     margin-bottom: 0;
   }
+
   .article:nth-of-type(2) .article__paragraph-container .article__image-container:last-child {
     margin-top: 25px;
   }
+
   .article:nth-of-type(2) .article__paragraph-container .article__image-container:first-child {
     margin-bottom: 25px;
   }
+
   .article:nth-of-type(2) .article__paragraph-container .article__image-container .article__image {
     width: 100%;
   }
+
   .load-more-news-btn {
     padding: 21px 0;
     margin: 37px 0 0;
   }
+
   .icons__row:first-of-type .icons__small-icon {
     margin-top: 58px;
   }
+
   .icons__row:first-of-type .icons__small-icon:last-of-type {
     margin-bottom: 0;
   }
+
   .icons__row:last-of-type .icons__small-icon {
     margin-bottom: 58px;
   }
+
   .icons__row:last-of-type .icons__small-icon:last-of-type {
     margin-bottom: 77px;
   }
+
   .icons__row:nth-of-type(2) {
     margin-top: 43.73px;
     margin-bottom: 55px;
   }
+
   .doctor-image-container,
   .more-news-btn {
     display: none;
   }
+
   .plain-text {
     padding-top: 16px;
     padding-bottom: 40px;
   }
+
   .rects-row {
     margin-top: 33px;
   }
+
   .rects-row .rect-container:nth-of-type(2) {
     order: -1;
   }
+
   .rects-row .rect-container:first-of-type {
     margin: 31px 0;
   }
+
   .slider {
     margin-top: 77px;
     margin-bottom: 46px;
   }
+
   .slider .slider__content {
     padding: 40px 26px 48px 45px;
   }
+
   .slider .slider__content .article__subheading {
     font-size: 24px;
   }
+
   .slider .slider__content .article__paragraph {
     margin: 20px 0;
   }
+
   .slider .slider__content .article__text-to-hide {
     display: none;
   }
+
   .slider .slider__content .content__button {
     width: 100%;
     position: relative;
     left: -8px;
   }
+
   .slider .slider__previous-control {
     left: -16px;
     top: 166px;
   }
+
   .slider .slider__next-control {
     right: -16px;
     top: 166px;
   }
+
   .form-container {
     margin: 0 -32px;
   }
+
   .form-container .form {
     padding: 40px 28px 25px;
   }
+
   .form-container .form .form__heading {
     margin-bottom: 20px !important;
   }
+
   .form-container .form .form__input {
     margin-bottom: 17px !important;
   }
+
   .form-container .form .form__input[name='telephone'] {
     margin-bottom: 0 !important;
   }
-  .form-container .form .form__gender-labels, .form-container .form .form__career-labels {
+
+  .form-container .form .form__gender-labels,
+  .form-container .form .form__career-labels {
     margin-left: 0px;
     flex-wrap: wrap;
   }
-  .form-container .form .form__gender-labels .form__career-label:last-of-type, .form-container .form .form__career-labels .form__career-label:last-of-type {
+
+  .form-container .form .form__gender-labels .form__career-label:last-of-type,
+  .form-container .form .form__career-labels .form__career-label:last-of-type {
     margin-left: auto;
     margin-top: 20px;
     order: 1;
   }
+
   .form-container .form .form__gender-labels {
     margin-top: 31px;
   }
+
   .form-container .form .form__career-labels {
     margin: 26px 0 13px;
   }
+
   .form-container .form .form__career-labels:after {
     content: '';
     width: 100%;
   }
+
   .form-container .form .form__submit-button {
     margin-top: 25px;
   }
+
   .news-container {
     margin-top: 64px;
   }
+
   .news-container .news {
     margin-bottom: 27px !important;
   }
+
   .form-container:last-of-type .form {
     margin-top: 6px;
     padding-top: 40px;
