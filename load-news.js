@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 console.log(xhr.responseXML);
                 console.dir(xhr.responseXML);
+                console.log(xhr.responseXML.body.children);
                 document.querySelector('article:last-of-type').append(xhr.responseXML.body.children);
                 document.querySelector('article:last-of-type').append(...xhr.responseXML.body.children);
             }
