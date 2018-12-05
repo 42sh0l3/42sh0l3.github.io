@@ -556,7 +556,7 @@
         </div>
 
         <div class="row form-container">
-            <form action="" class="col-12 form">
+            <form name="form-1" action="" class="col-12 form">
                 <h2 class="form__heading">ЗАПОЛНИ</h2>
 
                 <div class="row">
@@ -578,13 +578,13 @@
                     <div class="col-10 col-sm-5 form__gender-labels">
                         <label class="form__gender-label">
                             Мальчик
-                            <input checked class="form__radio" type="radio" name="gender">
+                            <input checked class="form__radio" type="radio" name="gender" value="boy">
                             <span class="form__styled-radio"></span>
                         </label>
 
                         <label class="form__gender-label">
                             Девочка
-                            <input class="form__radio" type="radio" name="gender">
+                            <input class="form__radio" type="radio" name="gender" value="girl">
                             <span class="form__styled-radio"></span>
                         </label>
                     </div>
@@ -595,23 +595,23 @@
                     <div class="col-10 col-sm-10 form__career-labels">
                         <label class="form__career-label">
                             Артист
-                            <input checked class="form__checkbox" type="checkbox" name="career">
+                            <input checked class="form__checkbox" type="checkbox" name="career" value="artist">
                             <span class="form__styled-checkbox"></span>
                         </label>
                         <label class="form__career-label">
                             Инженер
-                            <input class="form__checkbox" type="checkbox" name="career">
+                            <input class="form__checkbox" type="checkbox" name="career" value="engineer">
                             <span class="form__styled-checkbox"></span>
                         </label>
                         <label class="form__career-label">
                             Учитель
-                            <input class="form__checkbox" type="checkbox" name="career">
+                            <input class="form__checkbox" type="checkbox" name="career" value="teacher">
                             <span class="form__styled-checkbox"></span>
                         </label>
                     </div>
                 </div>
 
-                <textarea name="message" class="form__textarea col-12" id="" rows="7" placeholder="Сообщение"></textarea>
+                <textarea name="message" class="form__textarea col-12" rows="7" placeholder="Сообщение"></textarea>
                 <button type="submit" class="form__submit-button black-button col-12">Отправить</button>
             </form>
         </div>
@@ -721,7 +721,7 @@
         <button class="col-12 black-button more-news-btn">Еще новости</button>
 
         <div class="row form-container">
-            <form action="" class="col-12 form">
+            <form name="form-2" action="" class="col-12 form">
                 <h2 class="form__heading">ЗАПОЛНИ</h2>
 
                 <div class="row">
@@ -740,7 +740,9 @@
 
     </main>
 
-    <script src="script/load-news.js"></script>
+    <script src="scripts/validator.min.js"></script>
+    <script src="scripts/forms.js"></script>
+    <script src="scripts/load-news.js"></script>
 </body>
 
 </html>
